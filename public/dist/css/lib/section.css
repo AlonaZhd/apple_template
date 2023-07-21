@@ -1,0 +1,47 @@
+.section, .section--center {
+  display: flex;
+  justify-content: center;
+}
+
+.section--center {
+  align-items: center;
+}
+
+.section__content {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 8px;
+}
+@media all and (width < 1920px) {
+  .section__content {
+    max-width: 1200px;
+  }
+}
+@media all and (width < 1200px) {
+  .section__content {
+    max-width: 1024px;
+  }
+}
+@media all and (width < 760px) {
+  .section__content {
+    max-width: 620px;
+  }
+}
+@media all and (width < 560px) {
+  .section__content {
+    max-width: 320px;
+  }
+}
+
+.section__double {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media all and (width < 1200px) {
+  .section__double {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=section.css.map */

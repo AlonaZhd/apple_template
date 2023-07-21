@@ -1,0 +1,11 @@
+<div class='product__content'>
+    <h1 class="product__title">{{title}}</h1>
+    <p class="product__description">{{descriptions}}</p>
+    <div class="product__action">
+        {{#with link}}
+            {{#each text}}
+                <a href="{{../link}}" class="product__link">{{this}}</a>
+            {{/each}}
+        {{/with}}
+    </div>
+</div>

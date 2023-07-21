@@ -1,0 +1,42 @@
+$colorMap: (
+    bgLight: #F5F5F7,
+    nero: #1D1D1F,
+    bgDark: #454545,  
+    grey: #DADADA,
+    lightGrey: rgba(255, 255, 255, 0.8),
+    primary: #0066CC,
+);
+
+@function color ($key) {
+    @return map-get($colorMap, $key);
+}
+
+$sizeMap: (
+    default: 16px,
+    textTitle: 56px,
+    textTitleSmall: 40px,
+    textSubtitle: 28px,
+    textSubtitleSmall: 20px,
+    textSmall: 12px,
+);
+
+@function size ($key: 'default') {
+    @return map-get($sizeMap, $key);
+}
+
+$screenSizeMap: (
+    desctop: 1920px,
+    laptop: 1200px,
+    tablet: 760px,
+    mobile: 560px,
+);
+
+@function screen ($key: 'default') {
+    @return map-get($screenSizeMap, $key);
+}
+
+
+@function contentSize ($key: 'default') {
+    @return map-get($contentSizeMap, $key);
+}
+

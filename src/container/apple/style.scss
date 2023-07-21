@@ -1,0 +1,215 @@
+@use '../../lib/service.scss' as s;
+
+.header {
+    @extend .section--center;
+    background-color: s.color('bgDark');
+    width: 100%;
+}
+
+.header__content {
+    @extend .section--center;
+    justify-content: space-between;
+    padding: s.space(4) 0;
+
+    @media all and (width < s.screen('tablet')) {
+        flex-wrap: wrap;
+        gap: s.space(4);
+    }
+}
+
+.header__block {
+    @extend .section--center;
+    gap: s.space(8);
+
+    @media all and (width < s.screen('laptop')) {
+        gap: s.space(4);
+    }
+}
+
+.header__link {
+    font-size: s.size('textSmall');
+    color: s.color("bgLight");
+    @include s.click;
+}
+
+.header__icon {
+    @include s.click;
+}
+
+.ad__content {
+    @extend .section--center;
+    justify-content: space-between;
+    padding: s.space(3) 0;
+
+    @media all and (width < s.screen('laptop')) {
+        flex-wrap: wrap;
+        gap: s.space(4);
+    }
+}
+
+.ad__link {
+    color: s.color("primary");
+    @include s.click;
+    @include s.linkAction;
+}
+
+.product {
+    @extend .section;
+    padding: s.space(20) 0;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+.product__content {
+    max-width: 400px;
+    display: grid;
+    gap: s.space(5);
+    text-align: center;
+}
+
+.product__title {
+    font-size: s.size('textTitle');
+    font-weight: 700;
+    line-height: 130%;
+    @include s.click;
+}
+
+.product__description {
+    font-size: s.size('textSubtitle');
+    font-weight: 400;
+    @include s.click;
+}
+
+.product__action {
+    @extend .section--center;
+    gap: s.space(5);
+    @include s.click;
+}
+
+.product__link {
+    @include s.linkAction;
+}
+
+.product--big {
+    max-height: 700px;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+
+    @media all and (width < s.screen('tablet')) {
+        background-size: 150%;
+        max-height: 500px;
+    }
+}
+
+.product--small {
+    max-height: 580px;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+
+    .product__title {
+        font-size: s.size('textTitleSmall');
+    }
+
+    .product__description {
+        font-size: s.size('textSubtitleSmall');
+        line-height: 150%;
+    }
+
+    @media all and (width < s.screen('tablet')) {
+        background-size: 150%;
+        max-height: 500px;
+    }
+}
+
+.product--top {
+    .product__content {
+         align-content: flex-start;
+    }
+}
+
+.product--button {
+    .product__content {
+         align-content: flex-end;
+    }
+}
+
+$productImage: (
+    'iphone_pro''/img/iphone-pro.jpg' #000,
+    'iphone' '/img/iphone.jpg' #FAFAFA,
+    'iwatch' '/img/iwatch.jpg' #000,
+    'trade_in' '/img/trade-in.jpg' #FBFBFD,
+    'conference' '/img/conference.jpg' #000,
+    'ipad' '/img/ipad.jpg' #FBFBFD,
+    'buisness' '/img/apple-for-business.jpg' #000,
+    'pods' '/img/air-pods.jpg' #FBFBFD,
+    'card' '/img/card.jpg' #FBFBFD,
+);
+
+@each $class, $url, $color in $productImage {
+    .product--#{$class} {
+        background-image: url(#{$url});
+        background-color: $color;
+    }
+}
+
+.product--dark {
+    background-color: #000;
+
+    .product__title,
+    .product__description {
+        color: s.color('bgLight');
+    }
+}
+
+.product--light {
+    background-color: s.color('bgLight');
+
+    .product__title,
+    .product__description {
+        color: s.color('nero');
+    }
+}
+
+.footer {
+    @extend .section;
+    width: 100%;
+}
+
+.footer__content {
+    padding: s.space(10) 0;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: s.space(5);
+
+    @media all and (width < s.screen('laptop')) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media all and (width < s.screen('tablet')) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.footer__items {
+    display: flex;
+    gap: s.space(4);
+}
+
+.footer__list {
+    display: flex;
+    flex-direction: column;
+    gap: s.space(3);
+}
+
+.footer__title {
+    font-weight: 600;
+    font-size: s.size('textSmall');
+    color: s.color('nero');
+}
+
+.footer__link {
+    font-size: s.size('textSmall');
+    color: s.color('bgDark');
+}
