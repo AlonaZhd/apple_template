@@ -2,9 +2,10 @@ $colorMap: (
     bgLight: #F5F5F7,
     nero: #1D1D1F,
     bgDark: #454545,  
-    grey: #DADADA,
+    secondary: #f0f0f0,
     lightGrey: rgba(255, 255, 255, 0.8),
     primary: #0066CC,
+    light: #d4d4d4,
 );
 
 @function color ($key) {
@@ -17,6 +18,7 @@ $sizeMap: (
     textTitleSmall: 40px,
     textSubtitle: 28px,
     textSubtitleSmall: 20px,
+    text: 14px,
     textSmall: 12px,
 );
 

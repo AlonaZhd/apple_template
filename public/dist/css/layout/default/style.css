@@ -44,8 +44,11 @@
   }
 }
 
-.page {
+body {
   font-family: "Roboto", sans-serif;
+}
+
+.page {
   font-size: 16px;
   background-color: #F5F5F7;
 }
